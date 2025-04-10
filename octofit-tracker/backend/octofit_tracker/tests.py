@@ -8,14 +8,14 @@ class UserModelTest(TestCase):
 
 class TeamModelTest(TestCase):
     def test_team_creation(self):
-        team = Team.objects.create(name="Team A", members=["user1", "user2"])
+        team = Team.objects.create(name="Team A", members=["User1", "User2"])
         self.assertEqual(team.name, "Team A")
 
 class ActivityModelTest(TestCase):
     def test_activity_creation(self):
         user = User.objects.create(email="test@example.com", name="Test User", age=25)
-        activity = Activity.objects.create(user=user, activity_type="Running", duration=30)
-        self.assertEqual(activity.activity_type, "Running")
+        activity = Activity.objects.create(user=user, type="Running", duration=30)
+        self.assertEqual(activity.type, "Running")
 
 class LeaderboardModelTest(TestCase):
     def test_leaderboard_creation(self):
